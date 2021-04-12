@@ -1,3 +1,19 @@
 queries
 guidlines - comment for what the queries is, querie code, website link to picture of querie output
 
+Import data into Neo4J:
+
+match (n) detach delete n
+
+call apoc.load.jdbc("jdbc:mysql://localhost:3306/song?serverTimezone=EST5EDT&user=songs&password=songs", "nodes") YIELD row
+merge (s:Song {track:row.track, artist:row.artist, tempo:row.tempo, danceability:row.danceability, acousticness:row.acousticness, energy:row.energy, decade:row.decade, genre:row.genre})
+return s;
+
+call apoc.load.jdbc("jdbc:mysql://localhost:3306/song?serverTimezone=EST5EDT&user=songs&password=songs", "link") YIELD row
+merge (s:Song{track:row.track1})
+merge (s2:Song{track:row.track2})
+create (s)-[:euclidean{euclidean:row.euclidean}]->(s2)
+return s, s2;
+
+Quieres Run in Neo4J:
+
