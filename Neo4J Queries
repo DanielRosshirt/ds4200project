@@ -1,6 +1,3 @@
-queries
-guidlines - comment for what the queries is, querie code, website link to picture of querie output
-
 Import data into Neo4J:
 
 match (n) detach delete n
@@ -15,19 +12,27 @@ merge (s2:Song{track:row.track2})
 create (s)-[:euclidean{euclidean:row.euclidean}]->(s2)
 return s, s2;
 
+
 Quieres Run in Neo4J (Removed in Settings Connect Result Nodes):
 
-// 1th percentile track relations
+// Similarity Euclidean distance scores comparison
+
+// 1th percentile track relations: highest similarity
 match (s1:Song)-[n:euclidean]->(s2:Song)
 where n.euclidean < 0.121576
 return s1, n, s2;
 
-// 5th percentile track relations
+// 5th percentile track relations: medium similarity
 match (s1:Song)-[n:euclidean]->(s2:Song)
 where n.euclidean < 0.206442
 return s1, n, s2;
 
-// 10th percentile track relations
+// 10th percentile track relations: weak similarity
 match (s1:Song)-[n:euclidean]->(s2:Song)
 where n.euclidean < 0.259790
 return s1, n, s2;
+
+
+// Characteristic clustering depending on Euclidean distance scores
+
+
