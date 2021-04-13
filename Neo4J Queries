@@ -1,3 +1,31 @@
+MySQL APOC Views:
+Created user songs with password songs and has  access to one schema called songs. In the songs schema there are two tables, node and links.
+
+use song;
+
+-- 4950 links in total
+select count(*) from links;
+
+-- 100 songs in total
+select count(*) from node;
+
+-- Create the views for Neo4J 
+
+-- view for link
+drop view link;
+create view link as
+select *
+from links
+order by euclidean
+limit 1000;
+
+-- view for node
+create view nodes as
+select * from node;
+
+
+-------------------------------------------------------------
+
 Import data into Neo4J:
 
 match (n) detach delete n
