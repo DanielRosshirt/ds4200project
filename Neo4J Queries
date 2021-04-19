@@ -248,6 +248,22 @@ where n.euclidean <  0.259790
 return s1, n, s2;
 
 
+// Characteristic clustering by the songs from the same decade by Euclidean distance
+
+// 1th percentile decade relation for the 60s
+match (s1:Song{decade:"60s"})-[n:euclidean]-(s2:Song{decade:"60s"})
+where n.euclidean < 0.121576
+return s1, n, s2; 
+
+// 5th percentile decade relation for the 60s
+match (s1:Song{decade:"60s"})-[n:euclidean]-(s2:Song{decade:"60s"})
+where n.euclidean < 0.206442
+return s1, n, s2; 
+
+// 10th percentile decade relation for the 60s
+match (s1:Song{decade:"60s"})-[n:euclidean]-(s2:Song{decade:"60s"})
+where n.euclidean < 0.259790
+return s1, n, s2; 
 
 
 // the count of the number of links between the top 5 songs ranked by # of links
