@@ -384,3 +384,4 @@ call {
 match (a)-[bb:euclidean]-(otherNode)
 where otherNode in listonode
 return otherNode
+
