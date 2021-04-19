@@ -143,7 +143,6 @@ match (s1:Song{genre:"pop"})-[n:euclidean]-(s2:Song)
 where n.euclidean <  0.121576
 return s1, n, s2;
 
-
 // characteristic filter for pop in the 5st percentile to other songs
 match (s1:Song{genre:"pop"})-[n:euclidean]-(s2:Song)
 where n.euclidean <  0.206442
@@ -267,6 +266,101 @@ return s1, n, s2;
 
 // decade relation for the 60s
 match (s1:Song{decade:"60s"})-[n:euclidean]-(s2:Song{decade:"60s"})
+return s1, n, s2; 
+
+// 1th percentile decade relation for the 70s
+match (s1:Song{decade:"70s"})-[n:euclidean]-(s2:Song{decade:"70s"})
+where n.euclidean < 0.121576
+return s1, n, s2; 
+
+// 5th percentile decade relation for the 70s
+match (s1:Song{decade:"70s"})-[n:euclidean]-(s2:Song{decade:"70s"})
+where n.euclidean < 0.206442
+return s1, n, s2; 
+
+// 10th percentile decade relation for the 70s
+match (s1:Song{decade:"70s"})-[n:euclidean]-(s2:Song{decade:"70s"})
+where n.euclidean < 0.259790
+return s1, n, s2; 
+
+// decade relation for the 70s
+match (s1:Song{decade:"70s"})-[n:euclidean]-(s2:Song{decade:"70s"})
+return s1, n, s2; 
+
+// 1th percentile decade relation for the 80s
+match (s1:Song{decade:"80s"})-[n:euclidean]-(s2:Song{decade:"80s"})
+where n.euclidean < 0.121576
+return s1, n, s2; 
+
+// 5th percentile decade relation for the 80s
+match (s1:Song{decade:"80s"})-[n:euclidean]-(s2:Song{decade:"80s"})
+where n.euclidean < 0.206442
+return s1, n, s2; 
+
+// 10th percentile decade relation for the 80s
+match (s1:Song{decade:"80s"})-[n:euclidean]-(s2:Song{decade:"80s"})
+where n.euclidean < 0.259790
+return s1, n, s2; 
+
+// decade relation for the 80s
+match (s1:Song{decade:"80s"})-[n:euclidean]-(s2:Song{decade:"80s"})
+return s1, n, s2; 
+
+// 1th percentile decade relation for the 90s
+match (s1:Song{decade:"90s"})-[n:euclidean]-(s2:Song{decade:"90s"})
+where n.euclidean < 0.121576
+return s1, n, s2; 
+
+// 5th percentile decade relation for the 90s
+match (s1:Song{decade:"90s"})-[n:euclidean]-(s2:Song{decade:"90s"})
+where n.euclidean < 0.206442
+return s1, n, s2; 
+
+// 10th percentile decade relation for the 90s
+match (s1:Song{decade:"90s"})-[n:euclidean]-(s2:Song{decade:"90s"})
+where n.euclidean < 0.259790
+return s1, n, s2; 
+
+// decade relation for the 90s
+match (s1:Song{decade:"90s"})-[n:euclidean]-(s2:Song{decade:"90s"})
+return s1, n, s2; 
+
+// 1th percentile decade relation for the 00s
+match (s1:Song{decade:"00s"})-[n:euclidean]-(s2:Song{decade:"00s"})
+where n.euclidean < 0.121576
+return s1, n, s2; 
+
+// 5th percentile decade relation for the 00s
+match (s1:Song{decade:"00s"})-[n:euclidean]-(s2:Song{decade:"00s"})
+where n.euclidean < 0.206442
+return s1, n, s2; 
+
+// 10th percentile decade relation for the 00s
+match (s1:Song{decade:"00s"})-[n:euclidean]-(s2:Song{decade:"00s"})
+where n.euclidean < 0.259790
+return s1, n, s2; 
+
+// decade relation for the 00s
+match (s1:Song{decade:"00s"})-[n:euclidean]-(s2:Song{decade:"00s"})
+return s1, n, s2; 
+
+// 1th percentile decade relation for the 10s
+match (s1:Song{decade:"10s"})-[n:euclidean]-(s2:Song{decade:"10s"})
+where n.euclidean < 0.121576
+return s1, n, s2; 
+
+// 5th percentile decade relation for the 10s
+match (s1:Song{decade:"10s"})-[n:euclidean]-(s2:Song{decade:"10s"})
+where n.euclidean < 0.206442
+return s1, n, s2; 
+
+// 10th percentile decade relation for the 10s
+match (s1:Song{decade:"10s"})-[n:euclidean]-(s2:Song{decade:"10s"})
+where n.euclidean < 0.259790
+return s1, n, s2; 
+
+// decade relation for the 10s
+match (s1:Song{decade:"10s"})-[n:euclidean]-(s2:Song{decade:"10s"})
 return s1, n, s2; 
 
 
