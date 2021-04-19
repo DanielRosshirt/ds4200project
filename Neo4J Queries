@@ -279,3 +279,14 @@ call {
 match (a)-[bb:euclidean]-(otherNode)
 where otherNode in listonode
 return otherNode
+
+
+// the count of the number of links between the top 10 songs ranked by # of links
+call {
+    match (n)-[b:euclidean]-(p)
+    with distinct(n) as a, count(b) as c
+    order by c desc limit 10
+    return collect(a) as listonode}
+match (a)-[bb:euclidean]-(otherNode)
+where otherNode in listonode
+return otherNode
