@@ -265,6 +265,10 @@ match (s1:Song{decade:"60s"})-[n:euclidean]-(s2:Song{decade:"60s"})
 where n.euclidean < 0.259790
 return s1, n, s2; 
 
+// decade relation for the 60s
+match (s1:Song{decade:"60s"})-[n:euclidean]-(s2:Song{decade:"60s"})
+return s1, n, s2; 
+
 
 // the count of the number of links between the top 5 songs ranked by # of links
 call {
