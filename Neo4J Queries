@@ -46,17 +46,17 @@ Quieres Run in Neo4J (Removed in Settings Connect Result Nodes):
 // Similarity Euclidean distance scores comparison
 
 // 1th percentile track relations: highest similarity
-match (s1:Song)-[n:euclidean]->(s2:Song)
+match (s1:Song)-[n:euclidean]-(s2:Song)
 where n.euclidean < 0.121576
 return s1, n, s2;
 
 // 5th percentile track relations: medium similarity
-match (s1:Song)-[n:euclidean]->(s2:Song)
+match (s1:Song)-[n:euclidean]-(s2:Song)
 where n.euclidean < 0.206442
 return s1, n, s2;
 
 // 10th percentile track relations: weak similarity
-match (s1:Song)-[n:euclidean]->(s2:Song)
+match (s1:Song)-[n:euclidean]-(s2:Song)
 where n.euclidean < 0.259790
 return s1, n, s2;
 
