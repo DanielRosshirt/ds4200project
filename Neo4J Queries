@@ -253,9 +253,9 @@ return s1, n, s2;
 // the count of the number of links between the top 5 songs ranked by # of links
 call {
     match (n)-[b:euclidean]->(p)
-    with distinct(n) as a, count(p) as c
+    with distinct(n) as a, count(b) as c
     order by c desc limit 5
-    return a, collect(a) as listonode, c}
+    return collect(a) as listonode}
 match (a)-[bb:euclidean]-(otherNode)
 where otherNode in listonode
-return a
+return otherNode
